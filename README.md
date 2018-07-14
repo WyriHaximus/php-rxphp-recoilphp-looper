@@ -15,8 +15,6 @@ To install via [Composer](http://getcomposer.org/), use the command below, it wi
 composer require wyrihaximus/rx-recoil-looper
 ```
 
-This middleware removes the raw body from the request. Best used after the request body has been parsed.
-
 # Usage
 
 Iterate over a RxPHP observable using while:
