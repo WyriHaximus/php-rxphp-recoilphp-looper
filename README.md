@@ -1,4 +1,4 @@
-# Run a set of react/http middleware when a context checker passes
+# Make observables iterable
 
 [![Build Status](https://travis-ci.com/WyriHaximus/php-rxphp-recoilphp-looper.svg?branch=master)](https://travis-ci.com/WyriHaximus/php-rxphp-recoilphp-looper)
 [![Latest Stable Version](https://poser.pugx.org/WyriHaximus/rx-recoil-looper/v/stable.png)](https://packagist.org/packages/WyriHaximus/rx-recoil-looper)
