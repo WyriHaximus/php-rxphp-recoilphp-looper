@@ -40,6 +40,11 @@ final class ObservableWhile
             $this->queue[] = $item;
         }, null, function () {
             $this->done = true;
+
+            if ($this->deferred instanceof Deferred) {
+                $this->deferred->resolve();
+                $this->deferred = null;
+            }
         });
     }
 
