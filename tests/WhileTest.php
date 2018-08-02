@@ -12,7 +12,7 @@ use function WyriHaximus\Rx\observableWhile;
 
 final class WhileTest extends TestCase
 {
-    public function testOne()
+    public function testExampleUsage()
     {
         $input = range(1, 1000);
         $output = [];
