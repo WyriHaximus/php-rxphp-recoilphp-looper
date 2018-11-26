@@ -29,7 +29,7 @@ final class ObservableWhile
      */
     public function __construct(ObservableInterface $observable)
     {
-        $observable->subscribe(function ($item) {
+        $observable->subscribe(function ($item): void {
             if ($this->deferred instanceof Deferred) {
                 $this->deferred->resolve($item);
                 $this->deferred = null;
@@ -38,7 +38,7 @@ final class ObservableWhile
             }
 
             $this->queue[] = $item;
-        }, null, function () {
+        }, null, function (): void {
             $this->done = true;
 
             if ($this->deferred instanceof Deferred) {
@@ -50,16 +50,16 @@ final class ObservableWhile
 
     public function get(): PromiseInterface
     {
-        if (count($this->queue) === 0 && $this->done === true) {
+        if (\count($this->queue) === 0 && $this->done === true) {
             return resolve();
         }
 
-        if (count($this->queue) === 0) {
+        if (\count($this->queue) === 0) {
             $this->deferred = new Deferred();
 
             return $this->deferred->promise();
         }
 
-        return resolve(array_shift($this->queue));
+        return resolve(\array_shift($this->queue));
     }
 }

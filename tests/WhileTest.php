@@ -10,16 +10,19 @@ use Throwable;
 use function ApiClients\Tools\Rx\observableFromArray;
 use function WyriHaximus\Rx\observableWhile;
 
+/**
+ * @internal
+ */
 final class WhileTest extends TestCase
 {
-    public function testExampleUsage()
+    public function testExampleUsage(): void
     {
-        $input = range(1, 1000);
+        $input = \range(1, 1000);
         $output = [];
 
         $loop = Factory::create();
         $recoil = ReactKernel::create($loop);
-        $recoil->setExceptionHandler(function (Throwable $error) {
+        $recoil->setExceptionHandler(function (Throwable $error): void {
             throw $error;
         });
         $recoil->execute(function () use ($input, &$output) {
@@ -34,11 +37,11 @@ final class WhileTest extends TestCase
         self::assertSame($input, $output);
     }
 
-    public function testOnCompletedWithEmptyQeueueAfterGet()
+    public function testOnCompletedWithEmptyQeueueAfterGet(): void
     {
         $loop = Factory::create();
         $subject = new Subject();
-        $loop->futureTick(function () use ($subject) {
+        $loop->futureTick(function () use ($subject): void {
             $subject->onCompleted();
         });
         $observableWhile = observableWhile($subject);
