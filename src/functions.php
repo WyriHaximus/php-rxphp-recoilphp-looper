@@ -2,10 +2,9 @@
 
 namespace WyriHaximus\Rx;
 
-use Generator;
 use Rx\ObservableInterface;
 
-function each(ObservableInterface $observable): Generator
+function observableWhile(ObservableInterface $observable)
 {
-    yield 1;
+    return new ObservableWhile($observable);
 }
