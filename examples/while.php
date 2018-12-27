@@ -5,7 +5,7 @@ use Recoil\React\ReactKernel;
 use function ApiClients\Tools\Rx\observableFromArray;
 use function WyriHaximus\Rx\observableWhile;
 
-require \dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+require \dirname(__DIR__) . \DIRECTORY_SEPARATOR . 'vendor' . \DIRECTORY_SEPARATOR . 'autoload.php';
 
 $loop = Factory::create();
 
@@ -18,7 +18,7 @@ $recoil->execute(function () {
     $observable = observableFromArray(\range(1, 1000));
     $observableWhile = observableWhile($observable);
     while ($i = (yield $observableWhile->get())) {
-        echo $i, PHP_EOL;
+        echo $i, \PHP_EOL;
     }
 });
 
