@@ -10,9 +10,9 @@ use function React\Promise\resolve;
 final class ObservableWhile
 {
     /**
-     * @var array
+     * @var \SplQueue
      */
-    private $queue = [];
+    private $queue;
 
     /**
      * @var Deferred
@@ -29,6 +29,7 @@ final class ObservableWhile
      */
     public function __construct(ObservableInterface $observable)
     {
+        $this->queue = new \SplQueue();
         $observable->subscribe(function ($item): void {
             if ($this->deferred instanceof Deferred) {
                 $this->deferred->resolve($item);
@@ -50,16 +51,16 @@ final class ObservableWhile
 
     public function get(): PromiseInterface
     {
-        if (\count($this->queue) === 0 && $this->done === true) {
+        if ($this->queue->count() === 0 && $this->done === true) {
             return resolve();
         }
 
-        if (\count($this->queue) === 0) {
+        if ($this->queue->count() === 0) {
             $this->deferred = new Deferred();
 
             return $this->deferred->promise();
         }
 
-        return resolve(\array_shift($this->queue));
+        return resolve($this->queue->dequeue());
     }
 }
