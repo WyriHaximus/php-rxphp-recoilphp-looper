@@ -15,6 +15,8 @@ final class RecoilTest extends TestCase
 {
     public function testNoMemoryLeakInRecoil(): void
     {
+        \gc_collect_cycles();
+
         $loop = Factory::create();
         $recoil = ReactKernel::create($loop);
         $recoil->setExceptionHandler(function (Throwable $error): void {
