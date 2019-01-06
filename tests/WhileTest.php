@@ -22,6 +22,7 @@ final class WhileTest extends TestCase
 
         $loop = Factory::create();
         $recoil = ReactKernel::create($loop);
+
         $recoil->setExceptionHandler(function (Throwable $error): void {
             throw $error;
         });
@@ -32,6 +33,7 @@ final class WhileTest extends TestCase
                 $output[] = $i;
             }
         });
+
         $loop->run();
 
         self::assertSame($input, $output);
@@ -41,12 +43,15 @@ final class WhileTest extends TestCase
     {
         $loop = Factory::create();
         $subject = new Subject();
+
         $loop->futureTick(function () use ($subject): void {
             $subject->onCompleted();
         });
+
         $observableWhile = observableWhile($subject);
         $promise = $observableWhile->get();
         $null = $this->await($promise, $loop);
+
         self::assertNull($null);
     }
 }
