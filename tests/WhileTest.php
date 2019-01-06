@@ -37,7 +37,6 @@ final class WhileTest extends TestCase
         $loop->run();
 
         self::assertSame($input, $output);
-        self::assertSame(0, \gc_collect_cycles());
     }
 
     public function testOnCompletedWithEmptyQeueueAfterGet(): void
@@ -54,6 +53,5 @@ final class WhileTest extends TestCase
         $null = $this->await($promise, $loop);
 
         self::assertNull($null);
-        self::assertSame(0, \gc_collect_cycles());
     }
 }
