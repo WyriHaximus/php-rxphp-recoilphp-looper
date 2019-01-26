@@ -32,8 +32,9 @@ final class ObservableWhile
         $this->queue = new \SplQueue();
         $observable->subscribe(function ($item): void {
             if ($this->deferred instanceof Deferred) {
-                $this->deferred->resolve($item);
+                $deferred = $this->deferred;
                 $this->deferred = null;
+                $deferred->resolve($item);
 
                 return;
             }
