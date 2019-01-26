@@ -31,8 +31,9 @@ final class ObservableWhile
     {
         $observable->subscribe(function ($item): void {
             if ($this->deferred instanceof Deferred) {
-                $this->deferred->resolve($item);
+                $deferred = $this->deferred;
                 $this->deferred = null;
+                $deferred->resolve($item);
 
                 return;
             }
