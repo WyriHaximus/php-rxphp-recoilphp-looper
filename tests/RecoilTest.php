@@ -4,9 +4,9 @@ namespace WyriHaximus\Tests\Rx;
 
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
+use function React\Promise\resolve;
 use Recoil\React\ReactKernel;
 use Throwable;
-use function React\Promise\resolve;
 
 /**
  * @internal

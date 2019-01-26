@@ -2,12 +2,12 @@
 
 namespace WyriHaximus\Tests\Rx;
 
+use function ApiClients\Tools\Rx\observableFromArray;
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
 use Recoil\React\ReactKernel;
 use Rx\Subject\Subject;
 use Throwable;
-use function ApiClients\Tools\Rx\observableFromArray;
 use function WyriHaximus\Rx\observableWhile;
 
 /**

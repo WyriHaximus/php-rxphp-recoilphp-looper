@@ -4,8 +4,8 @@ namespace WyriHaximus\Rx;
 
 use React\Promise\Deferred;
 use React\Promise\PromiseInterface;
-use Rx\ObservableInterface;
 use function React\Promise\resolve;
+use Rx\ObservableInterface;
 
 final class ObservableWhile
 {
