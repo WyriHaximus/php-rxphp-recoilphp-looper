@@ -38,7 +38,7 @@ final class ObservableWhile
                 return;
             }
 
-            $this->queue[] = $item;
+            $this->queue->enqueue($item);
         }, null, function (): void {
             $this->done = true;
 
