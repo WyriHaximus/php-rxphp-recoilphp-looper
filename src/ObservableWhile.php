@@ -4,8 +4,10 @@ namespace WyriHaximus\Rx;
 
 use React\Promise\Deferred;
 use React\Promise\PromiseInterface;
+use function React\Promise\reject;
 use function React\Promise\resolve;
 use Rx\ObservableInterface;
+use Throwable;
 
 final class ObservableWhile
 {
@@ -40,7 +42,17 @@ final class ObservableWhile
             }
 
             $this->queue->enqueue($item);
-        }, null, function (): void {
+        }, function (Throwable $error): void {
+            if ($this->deferred instanceof Deferred) {
+                $deferred = $this->deferred;
+                $this->deferred = null;
+                $deferred->reject($error);
+
+                return;
+            }
+
+            $this->queue->enqueue($error);
+        }, function (): void {
             $this->done = true;
 
             if ($this->deferred instanceof Deferred) {
@@ -62,6 +74,12 @@ final class ObservableWhile
             return $this->deferred->promise();
         }
 
-        return resolve($this->queue->dequeue());
+        $object = $this->queue->dequeue();
+
+        if ($object instanceof Throwable) {
+            return reject($object);
+        }
+
+        return resolve($object);
     }
 }
