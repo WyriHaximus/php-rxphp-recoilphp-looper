@@ -4,10 +4,8 @@ namespace WyriHaximus\Tests\Rx;
 
 use ApiClients\Tools\TestUtilities\TestCase;
 use React\EventLoop\Factory;
-use function React\Promise\reject;
 use Recoil\Exception\StrandException;
 use Recoil\React\ReactKernel;
-use Rx\Observable;
 use Rx\Subject\Subject;
 use Throwable;
 use function WyriHaximus\Rx\observableWhile;
@@ -29,9 +27,12 @@ final class ErrorTest extends TestCase
         $recoil->setExceptionHandler(function (Throwable $error) use (&$throwable): void {
             $throwable = $error;
         });
-        $recoil->execute(function () use (&$output, $exception) {
-            $observable = Observable::fromPromise(reject($exception));
+        $recoil->execute(function () use (&$output, $exception, $loop) {
+            $observable = new Subject();
             $observableWhile = observableWhile($observable);
+            $loop->futureTick(function () use ($observable, $exception): void {
+                $observable->onError($exception);
+            });
             while ($void = (yield $observableWhile->get())) {
                 //
             }
