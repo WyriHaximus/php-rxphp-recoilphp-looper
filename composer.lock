@@ -55,12 +55,12 @@
             "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/IcecaveStudios/repr.git",
+                "url": "https://github.com/icecave/repr.git",
                 "reference": "8a3d2953adf5f464a06e3e2587aeacc97e2bed07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/IcecaveStudios/repr/zipball/8a3d2953adf5f464a06e3e2587aeacc97e2bed07",
+                "url": "https://api.github.com/repos/icecave/repr/zipball/8a3d2953adf5f464a06e3e2587aeacc97e2bed07",
                 "reference": "8a3d2953adf5f464a06e3e2587aeacc97e2bed07",
                 "shasum": ""
             },
@@ -103,16 +103,16 @@
         },
         {
             "name": "react/event-loop",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/event-loop.git",
-                "reference": "a0ecac955c67b57c40fe4a1b88a7cca1b58c982d"
+                "reference": "6d24de090cd59cfc830263cfba965be77b563c13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/a0ecac955c67b57c40fe4a1b88a7cca1b58c982d",
-                "reference": "a0ecac955c67b57c40fe4a1b88a7cca1b58c982d",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/6d24de090cd59cfc830263cfba965be77b563c13",
+                "reference": "6d24de090cd59cfc830263cfba965be77b563c13",
                 "shasum": ""
             },
             "require": {
@@ -141,7 +141,7 @@
                 "asynchronous",
                 "event-loop"
             ],
-            "time": "2019-02-07T16:19:49+00:00"
+            "time": "2020-01-01T18:39:52+00:00"
         },
         {
             "name": "react/promise",
@@ -1697,6 +1697,7 @@
                 "json",
                 "normalizer"
             ],
+            "abandoned": "ergebnis/composer-json-normalizer",
             "time": "2019-01-09T14:43:16+00:00"
         },
         {
@@ -1762,6 +1763,7 @@
                 "normalizer",
                 "plugin"
             ],
+            "abandoned": "ergebnis/composer-normalize",
             "time": "2019-03-13T14:42:11+00:00"
         },
         {
@@ -1814,6 +1816,7 @@
                 "json",
                 "normalizer"
             ],
+            "abandoned": "ergebnis/json-normalizer",
             "time": "2018-10-07T17:36:39+00:00"
         },
         {
@@ -1863,6 +1866,7 @@
                 "json",
                 "printer"
             ],
+            "abandoned": "ergebnis/json-printer",
             "time": "2018-08-11T23:54:50+00:00"
         },
         {
@@ -1916,6 +1920,7 @@
                 "phpstan-extreme-rules",
                 "phpstan-rules"
             ],
+            "abandoned": "ergebnis/phpstan-rules",
             "time": "2019-01-17T22:24:11+00:00"
         },
         {
@@ -2033,7 +2038,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🅱 Nette Bootstrap: the simple way to configure and bootstrap your Nette application.",
+            "description": "? Nette Bootstrap: the simple way to configure and bootstrap your Nette application.",
             "homepage": "https://nette.org",
             "keywords": [
                 "bootstrapping",
@@ -2098,7 +2103,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "💎 Nette Dependency Injection Container: Flexible, compiled and full-featured DIC with perfectly usable autowiring and support for all new PHP 7.1 features.",
+            "description": "? Nette Dependency Injection Container: Flexible, compiled and full-featured DIC with perfectly usable autowiring and support for all new PHP 7.1 features.",
             "homepage": "https://nette.org",
             "keywords": [
                 "compiled",
@@ -2163,7 +2168,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🔍 Nette Finder: find files and directories with an intuitive API.",
+            "description": "? Nette Finder: find files and directories with an intuitive API.",
             "homepage": "https://nette.org",
             "keywords": [
                 "filesystem",
@@ -2223,7 +2228,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🍸 Nette NEON: encodes and decodes NEON file format.",
+            "description": "? Nette NEON: encodes and decodes NEON file format.",
             "homepage": "http://ne-on.org",
             "keywords": [
                 "export",
@@ -2286,7 +2291,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🐘 Nette PHP Generator: generates neat PHP code for you. Supports new PHP 7.3 features.",
+            "description": "? Nette PHP Generator: generates neat PHP code for you. Supports new PHP 7.3 features.",
             "homepage": "https://nette.org",
             "keywords": [
                 "code",
@@ -2350,7 +2355,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🍀 Nette RobotLoader: high performance and comfortable autoloader that will search and autoload classes within your application.",
+            "description": "? Nette RobotLoader: high performance and comfortable autoloader that will search and autoload classes within your application.",
             "homepage": "https://nette.org",
             "keywords": [
                 "autoload",
@@ -2423,7 +2428,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🛠 Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong password generating etc.",
+            "description": "? Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong password generating etc.",
             "homepage": "https://nette.org",
             "keywords": [
                 "array",
@@ -5204,7 +5209,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "email": "BackEndTea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -5983,7 +5988,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "description": "🌯 PHPStan rules wrapper",
+            "description": "? PHPStan rules wrapper",
             "time": "2019-03-16T14:53:23+00:00"
         },
         {
